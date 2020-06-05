@@ -9,6 +9,6 @@ RUN yum install -y autoconf automake libtool make git           \
     && git checkout curl-7_70_0                                 \
     && ./buildconf                                              \
     && mkdir build/ && cd build/                                \
-    && CFLAGS=-Werror ../configure                              \
+    && ../configure --enable-werror --enable-debug              \
     && make && make install                                     \
     && yum clean all
